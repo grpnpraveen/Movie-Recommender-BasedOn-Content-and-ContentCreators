@@ -3,7 +3,7 @@
 ## Contents
 
 * [Abstract](#Abstract)
-* [Problem Definition](#Problem Definition)
+* [Problem Definition](#Problem-Definition)
 * [Objectives](#referring-to-items)
 	- [Requirements](#get-all-items)
 * [Challenges](#referring-to-menu-instances)
