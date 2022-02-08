@@ -90,6 +90,7 @@ Each movie node contains properties like year, rating, duration, plot, voting’
 		<p align="center">
  <img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/7.png"/>
 </p>
+
 ## Proposed Methodology
 
 The best way to get the movies that are similar to the input movie is using the genre and plot of the movie but to connect emotionally with the film the user must feel the way the movie created so I included the content creators while filtering the movies from the database. The content creators that I chose are directors and writers of the film.
