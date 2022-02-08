@@ -24,7 +24,7 @@ The problem that this project trying to solve is to recommend the accurate movie
 
 ## Objectives
 To make a project which has access to movies data and can perform various operations on the data to recommend the user best suited movies based on the one’s he liked based on content and content creators.
-### Requirements
+### Requirements:
 1.	The dataset that contains all the movies along with some information about the movie like genre, ratings, directors, and writers.
 2.	Best database which uses knowledge graph as a data structure to retrieve data fast based on the relations between the data.
 3.	Selecting the suitable web framework which can communicate with graph database and with the web program.
