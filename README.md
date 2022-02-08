@@ -8,7 +8,7 @@
 	- [Requirements](#Requirements)
 * [Challenges](#Challenges)
 * [Deliverables ](#Deliverables)
-	- [Image / Screenshots of WEB Interface](#Image-/-Screenshots of Database)
+	- [Image / Screenshots of WEB Interface](#Image-/-Screenshots-of-Database)
 * [Discription of the Dataset Item](#Discription-of-the-Dataset-Item)
 * [Proposed Methodology](#Proposed-Methodology)
 * [Experimental Results](#Experimental-Results)
