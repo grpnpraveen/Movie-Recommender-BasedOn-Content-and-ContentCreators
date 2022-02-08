@@ -1,0 +1,35 @@
+MoviesData--Datasetname
+contentcreators---main plot
+
+# prioritized movie recommendation based on content and content-creators
+__________________________________________________________________________________________________________
+#   step-0 (Pending)
+
+if same name then year ->gives output to enter the year or to choose the year
+
+if same name and same year -> I will take the one with more rating.
+
+# step-1
+
+input_movie=__some_name__ (need to convert it to id) , now 
+input_movie=__someid__ 
+
+
+# step-2
+
+->  directors with same personality  
+->  writers with same personality    
+
+# step 3 
+
+-> all movies from these directors and writers from input movie genre
+
+# step 4
+
+-> movies those ratings greater or equal than input movie
+
+# step-6 
+
+plots similarity (?) nlp
+
+
