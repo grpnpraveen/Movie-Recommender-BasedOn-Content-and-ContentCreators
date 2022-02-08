@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,100&family=Meow+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fira+Sans:ital,wght@1,100&family=Meow+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee&family=Fira+Sans:ital,wght@1,100&family=Meow+Script&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee&family=Fira+Sans:ital,wght@1,100&family=Meow+Script&family=Mitr:wght@300&display=swap" rel="stylesheet">   
+   <style>
+       #year,#genre,#rating,#duration{
+            margin-top: 2%;
+       }
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:rgb(255, 255, 255);
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #ffffff;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(219, 219, 219, 0.932); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3; 
+}
+#intro{
+display:flex;
+flex-direction: row;
+overflow-x:hidden;
+border-radius: 6px ;
+position: relative;
+font-family: Muli, sans-serif;
+min-width: 284px;
+min-height: initial;
+backdrop-filter: blur(8px);
+background: rgba(33, 37, 41, 0.2);
+width:90%;
+height:570px;
+margin-left: 5%;
+/* margin-top: 1%; */
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.resultsheadingwithback{
+display: flex;
+flex-direction: row;
+width:100%;
+}
+.results{
+    margin-left: 5%;
+    margin-top: 2%;
+    color:rgb(255, 255, 255);
+}
+.left
+{
+    display:flex;
+    flex-direction: column;
+    width:25%;
+    height:100%;
+    background-color: #353b487c;
+    border-radius: 6px;
+}
+.leftitem{
+    padding:9%;
+    color:#D3D3D4;
+    text-align: center;
+
+}
+.leftitem:hover{
+    background-color: #202020;
+    cursor: pointer;
+}
+#generalinfo{
+    margin-top: 20%;
+}
+.smallposter{
+    align-self: center;
+    margin-top: 2%;
+}
+#moviepostersmall{
+   
+    border-radius: 6px;
+    width:101px;
+    height:150px;
+}
+
+#titlepart{
+margin-top:2%;
+width:80%;
+text-align: center;
+word-wrap:break-word;
+}
+.yearblock,.genreblock,.ratingblock,.durationblock{
+    display: flex;
+    flex-direction: row;
+    padding:2%;
+    align-self:center;
+    width:20%;
+}
+.head{
+    font-size: larger;
+}
+#year,#genre,#rating,#duration{
+    margin-left:4%;
+    font-weight:bold;
+}
+
+.head2{
+    padding:5%;
+}
+.plotblock{
+    text-align: center;
+}
+
+.test{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    margin-top:-4%;
+}
+
+#directorscontainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    /* overflow: hidden; */
+    padding-top:0%;
+    margin-left:5%;
+    /* padding:3%; */
+    width:15%;
+    height:40%;
+    color:white;
+}
+
+#titlepart1{
+    align-self:left;
+    margin-left:-10%;
+} 
+#titlepart{
+    align-self:left;
+    margin-left:-10%;
+} 
+
+#right1{
+    /* background-image: url('../static/bg1.jpg'); */
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    color:white;
+    background-color: rgba(41, 41, 41, 0.507);
+}
+#right2{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    background-color: rgba(41, 41, 41, 0.507);
+    display:none;
+    color:white;
+}
+#right3{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    background-color: rgba(41, 41, 41, 0.507);
+    display: none;
+    color:white;
+}
+.backbtn{
+    margin-top:1%;
+    margin-left:70%;
+align-self: center;
+}
+.btn-info{
+    padding:30% 80%;
+}
+.btn-info:hover{
+background-color: #2793a8;
+}
+    </style>
+    <title>Movie Recommander</title>
+</head>
+<body id="mainbody" style="background-size: cover;">
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+   <div class="container">
+    <a href="{{url_for('index')}}" class="navbar-brand"><span><i class="material-icons" style="position:absolute;margin-left: -2%;font-size:xx-large;">movie</i></span>Movie Recommander</a>
+
+    </div>
+</nav>
+
+<div class="resultsheadingwithback">
+    <div class="results"><h1>Movie Info</h1></div>
+    <div class="backbtn">
+        <a href="{{url_for('showResults')}}"><button type="button" class="btn btn-info">Back</button></a>
+    </div>
+</div>
+<div id="intro"> 
+    <div class="left">
+        <div id="generalinfo" class="leftitem" onclick="switchmenu(1)">
+            <h4 style="font-weight: bolder;font-family: 'Yanone Kaffeesatz', sans-serif;font-size: x-large;">General Information</h4>
+        </div>
+        <div id="plot" class="leftitem" onclick="switchmenu(2)">
+            <h4 style="font-weight: bolder;font-family: 'Yanone Kaffeesatz', sans-serif;font-size: x-large;">Plot</h4>
+        </div>
+        <div id="directors" class="leftitem" onclick="switchmenu(31)">
+            <h4 style="font-weight: bolder;font-family: 'Yanone Kaffeesatz', sans-serif;font-size: x-large;">Directors</h4>
+        </div>
+        <div id="writers" class="leftitem" onclick="switchmenu(32)">
+            <h4 style="font-weight: bolder;font-family: 'Yanone Kaffeesatz', sans-serif;font-size: x-large;">Writers</h4>
+        </div>
+        <div id="cast" class="leftitem" onclick="switchmenu(33)">
+            <h4 style="font-weight: bolder;font-family: 'Yanone Kaffeesatz', sans-serif;font-size: x-large;">Cast</h4>
+        </div>
+    </div>
+
+    <div id="right3" >
+        <div class="head2">
+            <h2 id="directorstext" style="font-family: 'Bungee', cursive;">Directors:</h2>
+        </div>
+        <div class="test" id="insert1">
+                            <!-- item start -->
+                            <!-- <div id="directorscontainer">
+                                <div id="imagepart">
+                                    <a  href="index.html">
+                                        <img id="moviepostersmall" src="https://m.media-amazon.com/images/M/MV5BNjA5Y2ZhYzctNDc1Yy00OGViLWI3NGUtOTYwZmE3NDFiYmIxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SY150_CR41,0,101,150_.jpg">
+                                    </a>
+                                </div>
+                                <div id="titlepart">
+                                    <p>Title</p>
+                                </div>
+                            </div> -->
+                            <!-- item end -->
+        </div>
+    </div>
+
+
+    <div id="right2">
+            <div class="head2">
+                <h2 style="font-family: 'Bungee', cursive;">Plot:</h2>
+            </div>
+            <div class="plotblock">
+                <h5 id="setplot" style="font-weight:bolder;font-family: 'Fira Sans', sans-serif;padding:2%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odio magnam nemo. Repellendus eum officiis, tenetur rerum ratione quis dignissimos quidem ad asperiores odio perspiciatis perferendis, mollitia repellat culpa tempore?</h5>
+            </div>  
+    </div>
+    <div id="right1">
+            <div class="smallposter">
+                <div id="imagepart">
+                    <a  href="index.html">
+                        <img id="moviepostersmall" src="https://m.media-amazon.com/images/M/MV5BNjA5Y2ZhYzctNDc1Yy00OGViLWI3NGUtOTYwZmE3NDFiYmIxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SY150_CR41,0,101,150_.jpg">
+                    </a>
+                    </div>
+                    <div id="titlepart1">
+                        <p id="settitle" style="text-align: center;">TitleTitleTitleTitle</p>
+                    </div>
+                </div>
+                <div class="yearblock">
+                    <div class="head" style="font-family: 'Mitr', sans-serif;">Realeased-in:</div>
+                    <div id="year">year</div>
+                </div>
+                <div class="genreblock">
+                    <div class="head" style="font-family: 'Mitr', sans-serif;">Genre:</div>
+                    <div id="genre">genrers</div>
+                </div>
+                <div class="ratingblock">
+                    <div class="head" style="font-family: 'Mitr', sans-serif;">Rating:</div>
+                    <div id="rating">r</div>
+                </div>
+                <div class="durationblock">
+                    <div class="head" style="font-family: 'Mitr', sans-serif;">Duration:</div>
+                    <div id="duration">x mins</div>
+                </div>
+            </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+      // var rand_num= Math.floor(Math.random() * 2);
+      var rand_num=1
+    var body=document.getElementById("mainbody");
+    rand_num=rand_num.toString()
+    // var bg_path="url('https://m.media-amazon.com/images/M/MV5BNjA5Y2ZhYzctNDc1Yy00OGViLWI3NGUtOTYwZmE3NDFiYmIxXkEyXkFqcGdeQXVyNTIzOTk5ODM@.jpg')";
+    var bg_path="url('/static/bg"+rand_num+".jpg')";
+    console.log(bg_path);
+    body.style.backgroundImage=bg_path;
+    var right1=document.getElementById("right1");
+    var right2=document.getElementById("right2");
+    var right3=document.getElementById("right3");
+
+    var general=document.getElementById("generalinfo");
+    var plot=document.getElementById("plot");
+    var directors=document.getElementById("directors");
+    var writers=document.getElementById("writers");
+    var cast=document.getElementById("cast");
+    var movie=null;
+    var directorsdata=null;
+    var writersdata=null;
+    var castdata=null;
+    function switchmenu(x)
+    {
+        var changetext=document.getElementById("directorstext");
+        switch(x)
+        {
+            case 1:
+            right1.style.display="flex";
+            right2.style.display="none";
+            right3.style.display="none";
+            general.style.backgroundColor="#202020";
+            plot.style.backgroundColor="#353b487c";
+            writers.style.backgroundColor="#353b487c";
+            directors.style.backgroundColor="#353b487c";
+            cast.style.backgroundColor="#353b487c";
+            break;
+            case 2:
+            right2.style.display="flex";
+            right1.style.display="none";
+            right3.style.display="none";
+            plot.style.backgroundColor="#202020";
+            writers.style.backgroundColor="#353b487c";
+            directors.style.backgroundColor="#353b487c";
+            cast.style.backgroundColor="#353b487c";
+            general.style.backgroundColor="#353b487c";
+            break;
+            case 31:
+            right3.style.display="flex";
+            right1.style.display="none";
+            right2.style.display="none";
+            directors.style.backgroundColor="#202020";
+            plot.style.backgroundColor="#353b487c";
+            writers.style.backgroundColor="#353b487c";
+            general.style.backgroundColor="#353b487c";
+            cast.style.backgroundColor="#353b487c";
+            changetext.innerHTML="Directors:";
+            const data1=directorsdata.map(match=>
+            `
+            <div id="directorscontainer">
+                                <div id="imagepart">
+                                    <a  href="index.html">
+                                        <img id="moviepostersmall" src="${match.photo}">
+                                    </a>
+                                </div>
+                                <div id="titlepart">
+                                    <p>${match.name}</p>
+                                </div>
+            </div>
+            `
+            ).join('');
+            document.getElementById("insert1").innerHTML=data1;
+            break;
+            case 32:
+            right3.style.display="flex";
+            right1.style.display="none";
+            right2.style.display="none";
+            writers.style.backgroundColor="#202020";
+            plot.style.backgroundColor="#353b487c";
+            general.style.backgroundColor="#353b487c";
+            cast.style.backgroundColor="#353b487c";
+            directors.style.backgroundColor="#353b487c";
+            changetext.innerHTML="Writers:";
+            const data2=writersdata.map(match=>
+            `
+            <div id="directorscontainer">
+                                <div id="imagepart">
+                                    <a  href="index.html">
+                                        <img id="moviepostersmall" src="${match.photo}">
+                                    </a>
+                                </div>
+                                <div id="titlepart">
+                                    <p>${match.name}</p>
+                                </div>
+            </div>
+            `
+            ).join('');
+            document.getElementById("insert1").innerHTML=data2;
+            break;
+            case 33:
+            right3.style.display="flex";
+            right1.style.display="none";
+            right2.style.display="none";
+            cast.style.backgroundColor="#202020";
+            directors.style.backgroundColor="#353b487c";
+            plot.style.backgroundColor="#353b487c";
+            general.style.backgroundColor="#353b487c";
+            writers.style.backgroundColor="#353b487c";
+            changetext.innerHTML="Cast:";
+            const data3=castdata.map(match=>
+            `
+            <div id="directorscontainer">
+                                <div id="imagepart">
+                                    <a  href="index.html">
+                                        <img id="moviepostersmall" src="${match.photo}">
+                                    </a>
+                                </div>
+                                <div id="titlepart">
+                                    <p>${match.name}</p>
+                                </div>
+            </div>
+            `
+            ).join('');
+            document.getElementById("insert1").innerHTML=data3;
+            break;
+        }
+    }
+    
+    async function getinfodata()
+    {
+        const res=await fetch('../static/movieinfo.json');
+        var movie_json=await res.json();
+        movie=movie_json[0];
+        console.log(movie.rating);
+        var intro=document.getElementById("intro");
+        document.getElementById("settitle").innerHTML=movie.name;
+        document.getElementById("year").innerHTML=movie.year;
+        document.getElementById("genre").innerHTML=movie.genre;
+        document.getElementById("rating").innerHTML=movie.rating;
+        document.getElementById("duration").innerHTML=movie.duration;
+        document.getElementById("setplot").innerHTML=movie.plot;
+        document.getElementById("moviepostersmall").src=movie.poster;
+        //
+        const directors=await fetch('../static/directors.json');
+        directorsdata=await directors.json();
+        //
+        const writers=await fetch('../static/writers.json');
+        writersdata=await writers.json();
+        //
+        const cast=await fetch('../static/cast.json');
+        castdata=await cast.json();
+    }
+    getinfodata();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

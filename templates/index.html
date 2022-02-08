@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,100&family=Meow+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fira+Sans:ital,wght@1,100&family=Meow+Script&display=swap" rel="stylesheet">
+
+    <style>
+        .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+
+
+    ::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(7, 7, 7, 0.521); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #505050; 
+}
+.intro{
+display:flex;
+flex-direction: row;
+border-radius: 6px;
+position: relative;
+font-family: Muli, sans-serif;
+
+min-width: 284px;
+min-height: initial;
+backdrop-filter: blur(8px);
+background: rgba(0, 0, 0, 0.2);
+/* background: rgba(33, 37, 41, 0.2); */
+width:90%;
+height:auto;
+margin-left: 5%;
+margin-top: 6%;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.p{
+    margin:0px;
+    padding:0px;
+}
+.about{
+    color: aliceblue;
+    width:80%;
+    /* background-color: #e74c3c; */
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.aboutinfo{
+    display: flex;
+    flex-direction: column;
+}
+.textabout,.mainhead,.extra{
+    padding-top: 2%;
+    padding-left: 4%;
+}
+.textunderabout,.someinfo{
+    padding-top: 1%;
+    padding-left: 4%;
+}
+.material-icons{
+    font-size: 2rem;
+}
+.insidecon{
+    display: flex;
+    flex-direction: row;
+    padding-left: 4%;
+    padding-top: 1%;
+    width:auto;
+}
+.extra{
+    display: flex;
+    flex-direction: column;
+}
+.someinfo{
+    padding-bottom: 2%;
+}
+.firstmain,.secondmain{
+    display: flex;
+    flex-direction: row;
+    width:20%;
+}
+.secondmain{
+    margin-left: 1%;
+  
+}
+.left{
+    
+    align-self: center;
+    padding-right:5%;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width:auto;
+}
+.bottom{
+   margin-top: -13%;
+}
+.pic{
+    display: flex;
+    flex-direction: column;
+    color:#353b48;
+    /* background-color: aliceblue; */
+    width:20%;
+}
+.toppic{
+    width:auto;
+    margin-top: 3%;
+    padding-top: 7%;
+    padding-left: 15%;
+    color:white;
+    border-radius: 8px;
+    background-color: #353b485b;
+}
+.dailyimagecontainer{
+    overflow: hidden;
+    margin-top: 4%;
+    margin-left:12%;
+    /* width:245px; */
+    text-align: center;
+    color:white;
+    height:80%;
+    max-height: 280px;
+    width:70%;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.dailyimagecontainer p{
+    margin-top:1%;
+    font-weight: bold;
+    font-size: small;
+}
+#dailyimage{
+    height:85%;
+    width:100%;
+    word-wrap: break-word;
+}
+#match-list{
+    color: rgb(255, 255, 255);
+    position:absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #849deb; */
+    background-color: #849eebad;
+    /* background-color: #212529; */
+    backdrop-filter: blur(8px);
+    margin-top: -0.6%;
+    margin-left:73.5%;
+    width:194px;
+    max-height: 500px;
+    height:auto;
+  
+    border-radius: 8px;
+    z-index: 2;
+}
+.suggesteditem{
+padding:5px;
+display: flex;
+flex-direction: column;
+}
+.suggesteditem:hover{
+    background-color: #455074ad;
+    cursor: pointer;
+}
+.suggesteditem h6{
+    width:100%;
+}
+    </style>
+    <title>Movie Recommander</title>
+</head>
+<body id="mainbody" style="background-size: cover;overflow-y: hidden;">
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+   <div class="container">
+        <a href="{{url_for('index')}}" class="navbar-brand"><span><i class="material-icons" style="position:absolute;margin-left: -2%;">movie</i></span>Movie Recommander</a>
+        <form  method="POST" action="{{ url_for('showResults') }}">
+            <div class="row">
+            
+                <div class="row no-gutters mt-3 align-items-center">
+                    <div class="col col-md-50">
+                        <input class="form-control border-secondary rounded-pill pr-5" name="searchtext" type="search" placeholder="Search" id="example-search-input2">
+                    </div>
+                    <div class="col-auto">
+                        <button href="results.html" class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="submit" style="background-color: aliceblue;">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </div>
+                    <!-- <div id="match-list"></div> -->
+
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</nav>
+
+<div id="match-list">
+    <!-- <div class="suggesteditem" onclick="setvalue(1)">
+        <h6 id="1" style="padding-bottom: 0%;margin-bottom: 0%;">First item 1</h6>
+        <p id="1p" style="font-size:xx-small;margin:0;padding: 0%;align-self: flex-end;">year</p>
+    </div> -->
+</div>
+<div class="intro"> 
+<div class="about">
+    <div class="column">
+        <div class="aboutinfo">
+            <div class="textabout" style="font-weight: bolder;font-family: 'Yanone Kaffeesatz', sans-serif;font-size: x-large;">About</div>
+            <div class="textunderabout" style="font-weight:bolder;font-family: 'Fira Sans', sans-serif;" >The main idea of this project is to give best recommendations for the users, based on the the movie that they are given in the search bar. The movies that are recommended will be gives the similar vibes same as the movie that the users have entered in the search bar.</div>
+        </div>
+        <div class="twomain">
+            <div class="mainhead" style="font-weight: bolder;font-family: 'Yanone Kaffeesatz', sans-serif;font-size: x-large;">Recommendation Based On</div>
+            <div class="insidecon">
+                <div class="firstmain">
+                  <div class="left"> <i class="material-icons">description</i></div>
+                  <div class="right">
+                      <div class="top" style="font-family: 'Abril Fatface', cursive;"><p>Content</p></div>
+                      <div class="bottom" style="font-weight:bolder;font-family: 'Fira Sans', sans-serif;">i.e genre,plot etc.</div>
+                  </div>
+                </div>
+                <div class="secondmain">
+                  <div class="left"> <i class="material-icons">groups</i></div>
+                  <div class="right">
+                      <div class="top"><p style="font-family: 'Abril Fatface', cursive;">Content Creators</p></div>
+                      <div class="bottom" style="font-weight:bolder;font-family: 'Fira Sans', sans-serif;">i.e directors,writers.</div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="extra">
+            <div class="sometitle" style="font-weight: bolder;font-family: 'Yanone Kaffeesatz', sans-serif;font-size: x-large;">Other Info</div>
+            <div class="someinfo" style="font-weight:bolder;font-family: 'Fira Sans', sans-serif;">These recommendations are the result of using knowledgegraph and other nlp concepts while filtering them from the neo4j database which has 85k movies in that along with writers,directors and cast info.</div>
+        </div>
+    </div>
+</div>
+
+<div class="pic">
+<div class="toppic"><p style="font-family: 'Yanone Kaffeesatz', sans-serif;font-weight: bolder;">Best Movie to Watch Today</p></div>
+<div class="bottompic">
+    <div class="dailyimagecontainer">
+        <img id="dailyimage">
+        <!-- <img id="dailyimage" src="https://m.media-amazon.com/images/M/MV5BNjA5Y2ZhYzctNDc1Yy00OGViLWI3NGUtOTYwZmE3NDFiYmIxXkEyXkFqcGdeQXVyNTIzOTk5ODM@.jpg
+        "> -->
+        <p id="set_title" style="font-weight:bolder;font-family: 'Fira Sans', sans-serif;">Title Of the Movie</p>
+    </div>
+ 
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var rand_num= 1;
+    // var rand_num= Math.floor(Math.random() * 2);
+    var body=document.getElementById("mainbody");
+    rand_num=rand_num.toString()
+    var bg_path="url('/static/bg"+rand_num+".jpg')";
+    console.log(bg_path);
+    body.style.backgroundImage=bg_path;
+
+
+    set_daily_poster();
+
+async function set_daily_poster()
+{
+    const poster_json=await fetch('../static/movies_posterlinks.json');
+    const posters=await poster_json.json();
+    var rand_num2= Math.floor(Math.random() * 99);
+    console.log(posters[rand_num2].posterlink)
+    var daily_image=document.getElementById("dailyimage");
+    var daily_image_title=document.getElementById("set_title");
+    daily_image.src = posters[rand_num2].posterlink;
+    daily_image_title.innerHTML=posters[rand_num2].name;
+}
+  
+
+
+    var search_text=document.getElementById("example-search-input2");
+    function show_alert()
+    {  
+        alert( search_text.value);
+    }
+    var searchInput=document.getElementById("example-search-input2");
+    searchInput.value="";
+    //testing
+    function setvalue(value)
+    {
+        var sugg_movie=document.getElementById(value);
+        var sugg_year=document.getElementById(value+1+"p");
+        searchInput.value=sugg_movie.innerHTML+"("+sugg_year.innerHTML+")";
+        matchlist.innerHTML='';
+        matches=[];
+           
+    }
+    //show suggestions 
+    const showSuggestinons=matches=>{
+        if(matches.length>0)
+        {
+            var count=1;
+            const direct_html=matches.map(match=>`
+                <div class="suggesteditem" onclick="setvalue(${count})">
+                            <h6 id="${count}" style="padding-bottom: 0%;margin-bottom: 0%;" class="${count+=1}">${match.name}</h6>
+                            <p id="${count.toString()+"p"}" style="font-size:xx-small;margin:0;padding: 0%;align-self: flex-end;color:pink;">${match.year}</p>
+                            </div>
+            `).join('');
+            // const direct_html=matches.map(match=>`
+            // <div class="card card-body mb-1">
+            //     <h4> ${match.name} (${match.abbr}) <span class="text-primary">${match.capital}</span></h4>
+            //     <small>Lat: ${match.lat} / Long: ${match.long}</small>
+            // </div>
+            // `).join('');
+
+
+            matchlist.innerHTML=direct_html;
+            // console.log(direct_html);
+        }
+       
+    };
+
+    // suggestions main function
+    const searchstates=async searchtext=>{
+
+
+        const res=await fetch('../static/neo4j_movies.json');
+        // const res=await fetch('../static/state_capitals.json');
+        const states=await res.json();
+        // console.log(states);
+        //get mathing text
+        let matches =states.filter(state=>{
+            const regex=new RegExp(`^${searchtext}`,'gi');
+            // return state.name.match(regex) || state.abbr.match(regex);
+            return state.name.match(regex);
+        });
+        if(searchtext.length === 0 || searchtext.length === 1 || searchtext.length==2){
+            matches=[];
+            matchlist.innerHTML='';
+        }
+        // console.log(matches);
+        showSuggestinons(matches);
+    };
+
+    // suggestions
+    var matchlist=document.getElementById("match-list");
+    search_text.addEventListener('input',()=>searchstates(search_text.value));
+
+  
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

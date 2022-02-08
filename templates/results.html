@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:rgb(255, 255, 255);
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #ffffff;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(219, 219, 219, 0.932); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3; 
+}
+#intro{
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding-left:8%;
+overflow-y: scroll;
+overflow-x:hidden;
+border-radius: 6px ;
+position: relative;
+font-family: Muli, sans-serif;
+min-width: 284px;
+min-height: initial;
+backdrop-filter: blur(8px);
+background: rgba(33, 37, 41, 0.2);
+width:90%;
+height:570px;
+margin-left: 5%;
+/* margin-top: 1%; */
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.resultsheadingwithback{
+display: flex;
+flex-direction: row;
+width:100%;
+}
+.results{
+    margin-left: 5%;
+    margin-top: 2%;
+    color:rgb(255, 255, 255);
+}
+.backbtn{
+    margin-top:1%;
+    margin-left:70%;
+align-self: center;
+}
+.btn-info{
+    padding:30% 80%;
+}
+.btn-info:hover{
+background-color: #2793a8;
+}
+
+#griditem{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top:2%;
+    margin-left:-2%;
+    /* padding:3%; */
+    width:15%;
+    height:40%;
+    color:white;
+}
+#moviepostersmall{
+    border-radius: 6px;
+    width:101px;
+    height:150px;
+}
+
+#titlepart{
+margin-top:2%;
+margin-left:6%;
+}
+#match-list{
+    color: rgb(255, 255, 255);
+    position:absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #849deb; */
+    background-color: #849eebad;
+    /* background-color: #212529; */
+    backdrop-filter: blur(8px);
+    margin-top: -0.6%;
+    margin-left:74%;
+    width:194px;
+    max-height: 500px;
+    height:auto;
+  
+    border-radius: 8px;
+    z-index: 2;
+}
+.suggesteditem{
+padding:5px;
+display: flex;
+flex-direction: column;
+}
+.suggesteditem:hover{
+    background-color: #455074ad;
+    cursor: pointer;
+}
+.suggesteditem h6{
+    width:100%;
+}
+    </style>
+    <title>Movie Recommander</title>
+</head>
+<body id="mainbody" style="background-size: cover;">
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+   <div class="container">
+    <a href="{{url_for('index')}}" class="navbar-brand"><span><i class="material-icons" style="position:absolute;margin-left: -2%;font-size:xx-large;">movie</i></span>Movie Recommander</a>
+
+    </div>
+</nav>
+
+<div class="resultsheadingwithback">
+    <div class="results"><h1>Results...</h1></div>
+    <div class="backbtn">
+        <a href="{{url_for('index')}}"><button type="button" class="btn btn-info">Back</button></a>
+    </div>
+</div>
+<div id="intro"> 
+
+    <!-- item start -->
+    <!-- <div id="griditem">
+        <div id="imagepart">
+            <a  href="index.html">
+                <img id="moviepostersmall" src="https://m.media-amazon.com/images/M/MV5BNjA5Y2ZhYzctNDc1Yy00OGViLWI3NGUtOTYwZmE3NDFiYmIxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SY150_CR41,0,101,150_.jpg">
+            </a>
+        </div>
+        <div id="titlepart">
+            <p>Title</p>
+        </div>
+    </div> -->
+   <!-- item end -->
+   <h2 style="color: red;align-self: center;width:100%;margin-left: 10%;font-weight: bolder;">No Matches Found, in our database. Retry with another movie</h2>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // var rand_num= Math.floor(Math.random() * 2);
+    var rand_num=1
+    var body=document.getElementById("mainbody");
+    rand_num=rand_num.toString()
+    var bg_path="url('/static/bg"+rand_num+".jpg')";
+    console.log(bg_path);
+    body.style.backgroundImage=bg_path;
+
+    var search_text=document.getElementById("example-search-input2");
+    function show_alert()
+    {
+       
+        alert( search_text.value);
+    }
+
+    // var res={{moviesjson}};
+    async function getresultdata()
+    {
+        const res=await fetch('../static/results.json');
+        var movies_json=await res.json();
+        console.log(movies_json[0]["name"]);
+        const direct_html=movies_json.map(match=>`  
+        <div id="griditem" >
+        <div id="imagepart">
+            <a  href="movieinfo/${match.id}">
+                <img id="moviepostersmall" src="${match.posterlink}">
+            </a>
+        </div>
+        <div id="titlepart">
+            <p>"${match.name}"</p>
+        </div>
+    </div>
+            `).join('');
+        var intro=document.getElementById("intro");
+        intro.innerHTML=direct_html;
+    }
+    getresultdata();
+    // var states=await res.json();
+    // console.log(states[0]);
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
