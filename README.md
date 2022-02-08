@@ -48,7 +48,9 @@ The main deliverables of this project are:
 2.	The whole project file that contains necessary files to run this we application.
 
 ### Image / Screenshots of WEB Interface
+
 * Home Page
+	
 	<p align="center">
  <img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/1.png"/>
 </p>
@@ -57,7 +59,8 @@ The main deliverables of this project are:
 		<p align="center">
  <img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/2.png"/>
 </p>
-* *Movie Info Page
+
+* Movie Info Page
 		<p align="center">
  <img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/3.png"/>
 </p>
@@ -72,14 +75,17 @@ Each movie node contains properties like year, rating, duration, plot, voting’
 	<p align="center">
  <img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/4.png"/>
 </p>
+
 * Director Nodes
 	<p align="center">
  <img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/5.png"/>
 </p>
+
 * Writer Nodes
 	<p align="center">
  <img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/6.png"/>
 </p>
+
 * Relations
 		<p align="center">
  <img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/7.png"/>
