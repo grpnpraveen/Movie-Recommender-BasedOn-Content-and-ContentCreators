@@ -8,7 +8,7 @@
 	- [Requirements](#Requirements)
 * [Challenges](#Challenges)
 * [Deliverables ](#Deliverables)
-	- [Image / Screenshots of WEB Interface](#Image/Screenshots-of-Database)
+	- [Image / Screenshots of WEB Interface](#Images-of-Database)
 * [Discription of the Dataset Item](#Discription-of-the-Dataset-Item)
 * [Proposed Methodology](#Proposed-Methodology)
 * [Experimental Results](#Experimental-Results)
@@ -57,7 +57,7 @@ The dataset is generated using the IMDB ids from the IMDB dataset and the other 
 This database contains 1,288,566 nodes and 3,348,593 relations. The nodes contain Movie nodes, Director nodes, Writer nodes, Cast nodes, Year of Release nodes and   Genre nodes. The relations contain directed relation, written relation, acted-in relation, genre-type relation, released-in relation. 
 Each movie node contains properties like year, rating, duration, plot, voting’s, genre, movie poster and some other data which is not used in the project. Similarly, director, writer, actor also has properties like name, biography, image of themselves.
 
-### Image/Screenshots of Database
+### Images of Database
 * Movie Nodes
 * Director Nodes
 * Writer Nodes
