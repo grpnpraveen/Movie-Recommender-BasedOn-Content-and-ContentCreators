@@ -48,9 +48,12 @@ The main deliverables of this project are:
 2.	The whole project file that contains necessary files to run this we application.
 
 ### Image / Screenshots of WEB Interface
-* Home Page
-* Results Page
-* Movie Info Page
+* *Home Page
+	<img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/1.png"/>
+* *Results Page
+	<img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/2.png"/>
+* *Movie Info Page
+	<img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/3.png"/>
 
 ## Description of the Dataset
 The dataset is generated using the IMDB ids from the IMDB dataset and the other necessary information in the dataset is generated using the IMDB library using python programing Language. This dataset is converted into a knowledge graph using the Neo4j database.
@@ -58,10 +61,14 @@ This database contains 1,288,566 nodes and 3,348,593 relations. The nodes contai
 Each movie node contains properties like year, rating, duration, plot, voting’s, genre, movie poster and some other data which is not used in the project. Similarly, director, writer, actor also has properties like name, biography, image of themselves.
 
 ### Images of Database
-* Movie Nodes
-* Director Nodes
-* Writer Nodes
-* Relations
+* *Movie Nodes
+	<img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/4.png"/>
+* *Director Nodes
+	<img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/5.png"/>
+* *Writer Nodes
+	<img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/6.png"/>
+* *Relations
+	<img src="https://github.com/grpnpraveen/Movie-Recommender-BasedOn-Content-ContentCreators/blob/main/static/7.png"/>
 
 ## Proposed Methodology
 
